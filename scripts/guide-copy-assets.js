@@ -12,6 +12,10 @@ fs.copySync(getAbsolutePath(sourceDir + 'examples'), getAbsolutePath(destDir + '
 
 fs.copySync(getAbsolutePath(sourceDir + 'usage'), getAbsolutePath(destDir + 'usage'));
 
+const stackblitzDestDir = process.env.TRAVIS ? '../dist/user-guide/assets/stackblitz/' : '../src/assets/stackblitz/';
+
+fs.copySync(getAbsolutePath('../projects/cashmere-examples/src/lib'), getAbsolutePath(stackblitzDestDir));
+
 function getAbsolutePath(relativePath) {
     return path.resolve(path.join(__dirname, relativePath));
 }
