@@ -1,0 +1,24 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"progress-example"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Options --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Color:<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-select</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"dotsColor"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"dark"</span> [<span class="hljs-attr">selected</span>]=<span class="hljs-string">"dotsColor === 'dark'"</span>&gt;</span>dark<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"light"</span> [<span class="hljs-attr">selected</span>]=<span class="hljs-string">"dotsColor === 'light'"</span>&gt;</span>light<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">hc-select</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-checkbox</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox-dots-size"</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"dotsMini"</span> [<span class="hljs-attr">checked</span>]=<span class="hljs-string">"dotsMini"</span>&gt;</span>Miniature<span class="hljs-tag">&lt;/<span class="hljs-name">hc-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-checkbox</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox-dots-center"</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"dotsCentered"</span> [<span class="hljs-attr">checked</span>]=<span class="hljs-string">"dotsCentered"</span>&gt;</span>Centered<span class="hljs-tag">&lt;/<span class="hljs-name">hc-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Spinner --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"progress-component-container"</span> [<span class="hljs-attr">ngClass</span>]=<span class="hljs-string">"{'dark-bg': dotsColor === 'light'}"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-progress-dots</span>
+                [<span class="hljs-attr">color</span>]=<span class="hljs-string">"dotsColor"</span>
+                [<span class="hljs-attr">isMini</span>]=<span class="hljs-string">"dotsMini"</span>
+                [<span class="hljs-attr">isCentered</span>]=<span class="hljs-string">"dotsCentered"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">hc-progress-dots</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>

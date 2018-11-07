@@ -1,0 +1,26 @@
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {FormControl} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+
+<span class="hljs-comment">/**
+ * @title Select using Angular forms
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'select-forms-example'</span>,
+    templateUrl: <span class="hljs-string">'select-forms-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'select-forms-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> SelectFormsExample {
+    selectControl = <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">'chicken'</span>);
+
+    setTaters() {
+        <span class="hljs-keyword">this</span>.selectControl.setValue(<span class="hljs-string">'taters'</span>);
+    }
+
+    toggleActive() {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.selectControl.disabled) {
+            <span class="hljs-keyword">this</span>.selectControl.enable();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.selectControl.disable();
+        }
+    }
+}

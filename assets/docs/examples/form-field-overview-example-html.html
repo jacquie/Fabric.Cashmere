@@ -1,0 +1,46 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-sample"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Job Name:<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">hcInput</span> <span class="hljs-attr">required</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"inputControl"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-error</span>&gt;</span>A job name is required<span class="hljs-tag">&lt;/<span class="hljs-name">hc-error</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-padding"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Data Source:<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-radio-group</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"radioControl"</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">"true"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SM"</span>&gt;</span>Source Mart<span class="hljs-tag">&lt;/<span class="hljs-name">hc-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SAM"</span>&gt;</span>Subject Area Mart<span class="hljs-tag">&lt;/<span class="hljs-name">hc-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Other"</span>&gt;</span>Other<span class="hljs-tag">&lt;/<span class="hljs-name">hc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-radio-group</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-error</span>&gt;</span>Specified data source does not match description<span class="hljs-tag">&lt;/<span class="hljs-name">hc-error</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-sample"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Run Frequency:<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-select</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Select frequency:"</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"selectControl"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"daily"</span>&gt;</span>Daily<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"weekly"</span>&gt;</span>Weekly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"monthly"</span>&gt;</span>Monthly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">hc-select</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-error</span>&gt;</span>Please select the run frequency for this item<span class="hljs-tag">&lt;/<span class="hljs-name">hc-error</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-sample flex-column"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Requested Notifications:<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-checkbox</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"checkControl"</span>&gt;</span>On failure<span class="hljs-tag">&lt;/<span class="hljs-name">hc-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-checkbox</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"checkControl"</span>&gt;</span>On sucess<span class="hljs-tag">&lt;/<span class="hljs-name">hc-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-checkbox</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"checkControl"</span>&gt;</span>On row-count mismatch<span class="hljs-tag">&lt;/<span class="hljs-name">hc-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-checkbox</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"checkControl"</span>&gt;</span>On dependency-wait timeout<span class="hljs-tag">&lt;/<span class="hljs-name">hc-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-error</span>&gt;</span>At least one notification must be selected<span class="hljs-tag">&lt;/<span class="hljs-name">hc-error</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo-button"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"invalidForm()"</span>&gt;</span>
+        Invalidate All Fields
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>

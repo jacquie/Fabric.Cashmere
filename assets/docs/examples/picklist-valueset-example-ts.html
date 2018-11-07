@@ -1,0 +1,58 @@
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+<span class="hljs-comment">/**
+ * @title Picklist valueset
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'picklist-valueset-example'</span>,
+    templateUrl: <span class="hljs-string">'picklist-valueset-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'picklist-valueset-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> PicklistValuesetExample {
+    <span class="hljs-keyword">public</span> myModel: {values: <span class="hljs-literal">null</span>; valueset: <span class="hljs-literal">null</span>};
+
+    <span class="hljs-keyword">public</span> config = {
+        codeIsSignificant: <span class="hljs-literal">true</span>,
+        useValuesets: <span class="hljs-literal">true</span>,
+        options: {
+            values: [
+                {code: <span class="hljs-string">'001'</span>, title: <span class="hljs-string">'Cholera'</span>},
+                {code: <span class="hljs-string">'001.0'</span>, title: <span class="hljs-string">'Cholera due to vibrio cholerae'</span>},
+                {code: <span class="hljs-string">'001.1'</span>, title: <span class="hljs-string">'Cholera due to vibrio cholerae el tor'</span>},
+                {code: <span class="hljs-string">'001.9'</span>, title: <span class="hljs-string">'Cholera, unspecified'</span>},
+                {code: <span class="hljs-string">'002'</span>, title: <span class="hljs-string">'Typhoid and paratyphoid fevers'</span>},
+                {code: <span class="hljs-string">'002.0'</span>, title: <span class="hljs-string">'Typhoid fever'</span>},
+                {code: <span class="hljs-string">'002.1'</span>, title: <span class="hljs-string">'Paratyphoid fever A'</span>},
+                {code: <span class="hljs-string">'002.2'</span>, title: <span class="hljs-string">'Paratyphoid fever B'</span>},
+                {code: <span class="hljs-string">'002.3'</span>, title: <span class="hljs-string">'Paratyphoid fever C'</span>},
+                {code: <span class="hljs-string">'002.9'</span>, title: <span class="hljs-string">'Paratyphoid fever, unspecified'</span>},
+                {code: <span class="hljs-string">'003'</span>, title: <span class="hljs-string">'Other salmonella infections'</span>},
+                {code: <span class="hljs-string">'003.0'</span>, title: <span class="hljs-string">'Salmonella gastroenteritis'</span>}
+            ],
+            valueSets: [
+                {
+                    title: <span class="hljs-string">'Cholera Bundle'</span>,
+                    code: <span class="hljs-string">'bebbf8d1-b4ca-495e-96dd-ed4e2dc32d70'</span>,
+                    subValueCount: <span class="hljs-number">3</span>,
+                    subValues: [
+                        {code: <span class="hljs-string">'001.0'</span>, title: <span class="hljs-string">'Cholera due to vibrio cholerae'</span>},
+                        {code: <span class="hljs-string">'001.1'</span>, title: <span class="hljs-string">'Cholera due to vibrio cholerae el tor'</span>},
+                        {code: <span class="hljs-string">'001.9'</span>, title: <span class="hljs-string">'Cholera, unspecified'</span>}
+                    ]
+                },
+                {
+                    title: <span class="hljs-string">'Typhoid'</span>,
+                    code: <span class="hljs-string">'bebbf8d1-b4ca-495e-96dd-ed4e2dc32d69'</span>,
+                    subValueCount: <span class="hljs-number">5</span>,
+                    subValues: [
+                        {code: <span class="hljs-string">'002'</span>, title: <span class="hljs-string">'Typhoid and paratyphoid fevers'</span>},
+                        {code: <span class="hljs-string">'002.0'</span>, title: <span class="hljs-string">'Typhoid fever'</span>},
+                        {code: <span class="hljs-string">'002.1'</span>, title: <span class="hljs-string">'Paratyphoid fever A'</span>},
+                        {code: <span class="hljs-string">'002.2'</span>, title: <span class="hljs-string">'Paratyphoid fever B'</span>},
+                        {code: <span class="hljs-string">'002.3'</span>, title: <span class="hljs-string">'Paratyphoid fever C'</span>}
+                    ]
+                }
+            ]
+        }
+    };
+}

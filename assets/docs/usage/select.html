@@ -1,0 +1,11 @@
+<p>The hc-select component may be nested within a hc-form-field component. hc-form-field acts as a coordinator between multiple components including label and error elements.</p>
+<p>To add a label use an hc-label within a hc-form-field. If the select box is required add the required attribute and an asterisk will be shown next to the label.</p>
+<pre><code class="language-html">&lt;hc-form-field&gt;
+    &lt;hc-label&gt;Select your facility:&lt;/hc-label&gt;
+    &lt;hc-select required placeholder=&quot;Select a city:&quot;&gt;
+        &lt;option&gt;Philadelphia&lt;/option&gt;
+        &lt;option&gt;Atlanta&lt;/option&gt;
+    &lt;/hc-select&gt;
+    &lt;hc-error&gt;Facility is required&lt;/hc-error&gt;
+&lt;/hc-form-field&gt;
+</code></pre>

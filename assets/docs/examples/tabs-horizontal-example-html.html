@@ -1,0 +1,38 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-demo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab-set</span> <span class="hljs-attr">direction</span>=<span class="hljs-string">"horizontal"</span> (<span class="hljs-attr">selectedTabChange</span>)=<span class="hljs-string">"selectionChanged($event)"</span> #<span class="hljs-attr">tabSet</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab</span> <span class="hljs-attr">tabTitle</span>=<span class="hljs-string">'Pending Tasks'</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content"</span>&gt;</span>
+                This is where pending tasks would go.
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab-title</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fa fa-check"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: #00a859; font-size: 20px;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>  Complete Tasks
+            <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab-title</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content"</span>&gt;</span>
+                These are completed tasks
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab-title</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fa fa-times"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: #f13c45; font-size: 20px;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> Incomplete Tasks
+            <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab-title</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content"</span>&gt;</span>
+                Incomplete tasks belong here.
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab</span> (<span class="hljs-attr">tabClick</span>)=<span class="hljs-string">"addTask($event)"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">hc-tab-title</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: #00aeff; font-weight: 600;"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fa fa-plus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> Add Task<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab-title</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content"</span>&gt;</span>
+                This is an example of a click handler on a tab.
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">hc-tab-set</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Set Selection"</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"primary"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"tabSet.selectTab(1)"</span>&gt;</span>
+    Select Complete Tasks
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"selection-text"</span>&gt;</span>Currently Selected Tab Index: {{selectedIndex}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>

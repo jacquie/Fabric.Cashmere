@@ -1,0 +1,11 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Enter text into the input below to edit the content of the popover:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">hcInput</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"body"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"primary"</span> [<span class="hljs-attr">hcPopover</span>]=<span class="hljs-string">"dynamic"</span> <span class="hljs-attr">popperPlacement</span>=<span class="hljs-string">"bottom"</span> [<span class="hljs-attr">popperCloseOnClickOutside</span>]=<span class="hljs-string">"false"</span>
+        <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>Click Me
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hc-popover-content</span> #<span class="hljs-attr">dynamic</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> [(<span class="hljs-attr">innerText</span>)]=<span class="hljs-string">"body"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">hc-popover-content</span>&gt;</span>
+

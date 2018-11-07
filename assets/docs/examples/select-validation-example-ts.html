@@ -1,0 +1,25 @@
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {FormControl} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+
+<span class="hljs-comment">/**
+ * @title Component Validation
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'select-validation-example'</span>,
+    templateUrl: <span class="hljs-string">'select-validation-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'select-validation-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> SelectValidationExample {
+    <span class="hljs-keyword">private</span> validCheck = <span class="hljs-literal">false</span>;
+
+    selectControl = <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">'active'</span>);
+
+    toggleValidate() {
+        <span class="hljs-keyword">this</span>.validCheck = !<span class="hljs-keyword">this</span>.validCheck;
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.validCheck) {
+            <span class="hljs-keyword">this</span>.selectControl.setErrors({incorrect: <span class="hljs-literal">true</span>});
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.selectControl.setErrors(<span class="hljs-literal">null</span>);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {TabChangeEvent} <span class="hljs-keyword">from</span> <span class="hljs-string">'@healthcatalyst/cashmere'</span>;
+
+<span class="hljs-comment">/**
+ * @title Horizontal Tabs with Event Handling
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'tabs-horizontal-example'</span>,
+    templateUrl: <span class="hljs-string">'tabs-horizontal-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'tabs-horizontal-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TabsHorizontalExample {
+    selectedIndex: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+
+    selectionChanged(event: TabChangeEvent) {
+        <span class="hljs-keyword">this</span>.selectedIndex = event.index;
+    }
+
+    addTask(event: Event) {
+        <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'The "Add Task" tab was clicked.'</span>);
+    }
+}

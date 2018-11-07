@@ -1,0 +1,18 @@
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+<span class="hljs-comment">/**
+ * @title Progress spinner
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'progress-spinner-example'</span>,
+    templateUrl: <span class="hljs-string">'progress-spinner-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'progress-spinner-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ProgressSpinnerExample {
+    spinnerIsDeterminate = <span class="hljs-literal">false</span>;
+    spinnerProgress = <span class="hljs-number">25</span>;
+    spinnerColor = <span class="hljs-string">'blue'</span>;
+    spinnerDiameter = <span class="hljs-number">50</span>;
+    spinnerHasChannel = <span class="hljs-literal">true</span>;
+    spinnerCentered = <span class="hljs-literal">true</span>;
+}

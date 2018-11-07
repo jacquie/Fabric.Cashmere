@@ -1,0 +1,17 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">content</span> <span class="hljs-attr">let-close</span>=<span class="hljs-string">"close"</span> <span class="hljs-attr">let-dismiss</span>=<span class="hljs-string">"dismiss"</span> <span class="hljs-attr">let-data</span>=<span class="hljs-string">"data"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hc-modal</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-modal-header</span>&gt;</span> Modal Title <span class="hljs-tag">&lt;/<span class="hljs-name">hc-modal-header</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-modal-body</span>&gt;</span> Data: {{data}}<span class="hljs-tag">&lt;/<span class="hljs-name">hc-modal-body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-modal-footer</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"link"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"dismiss()"</span>&gt;</span> Cancel <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"primary"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"close()"</span>&gt;</span> OK <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">hc-modal-footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">hc-modal</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"primary"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"open()"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo-button"</span>&gt;</span>
+    Open Large Modal from Component
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"secondary"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"openTemplate(content)"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo-button"</span>&gt;</span>
+    Open Auto-Sized Modal from Template
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>

@@ -1,0 +1,24 @@
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {FormControl} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+
+<span class="hljs-comment">/**
+ * @title Multiple Form Field Elements
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'form-field-overview-example'</span>,
+    templateUrl: <span class="hljs-string">'form-field-overview-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'form-field-overview-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> FormFieldOverviewExample {
+    selectControl = <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">'daily'</span>);
+    inputControl = <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>);
+    radioControl = <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">'SM'</span>);
+    checkControl = <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>);
+
+    invalidForm() {
+        <span class="hljs-keyword">this</span>.inputControl.setErrors({incorrect: <span class="hljs-literal">true</span>});
+        <span class="hljs-keyword">this</span>.selectControl.setErrors({incorrect: <span class="hljs-literal">true</span>});
+        <span class="hljs-keyword">this</span>.checkControl.setErrors({incorrect: <span class="hljs-literal">true</span>});
+        <span class="hljs-keyword">this</span>.radioControl.setErrors({incorrect: <span class="hljs-literal">true</span>});
+    }
+}

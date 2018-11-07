@@ -1,0 +1,14 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span> <span class="hljs-attr">inline</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Number of items<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">hcInput</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"length"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span> <span class="hljs-attr">inline</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Current page number:<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">hcInput</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"currentPage"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hc-checkbox</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hide-page-size"</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"hidePageSize"</span> [<span class="hljs-attr">checked</span>]=<span class="hljs-string">"hidePageSize"</span>&gt;</span>Hide page size selector<span class="hljs-tag">&lt;/<span class="hljs-name">hc-checkbox</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">hc-pagination</span> [<span class="hljs-attr">length</span>]=<span class="hljs-string">"length"</span> [<span class="hljs-attr">pageNumber</span>]=<span class="hljs-string">"currentPage"</span> [<span class="hljs-attr">hidePageSize</span>]=<span class="hljs-string">"hidePageSize"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">hc-pagination</span>&gt;</span>

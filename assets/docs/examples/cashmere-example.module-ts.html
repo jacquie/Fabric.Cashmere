@@ -1,0 +1,346 @@
+
+<span class="hljs-comment">/* tslint:disable */</span>
+<span class="hljs-comment">/** DO NOT MANUALLY EDIT THIS FILE, IT IS GENERATED VIA GULP 'build-examples-module' */</span>
+<span class="hljs-keyword">import</span> {NgModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {FormsModule, ReactiveFormsModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+<span class="hljs-keyword">import</span> {CommonModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/common'</span>;
+<span class="hljs-keyword">import</span> {CashmereModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'./cashmere.module'</span>;
+<span class="hljs-keyword">import</span> {AccordionOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./accordion-overview/accordion-overview-example'</span>;
+<span class="hljs-keyword">import</span> {ButtonAnchorExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./button-anchor/button-anchor-example'</span>;
+<span class="hljs-keyword">import</span> {ButtonDisabledExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./button-disabled/button-disabled-example'</span>;
+<span class="hljs-keyword">import</span> {ButtonIconExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./button-icon/button-icon-example'</span>;
+<span class="hljs-keyword">import</span> {ButtonLinkExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./button-link/button-link-example'</span>;
+<span class="hljs-keyword">import</span> {ButtonPrimaryExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./button-primary/button-primary-example'</span>;
+<span class="hljs-keyword">import</span> {ButtonSecondaryExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./button-secondary/button-secondary-example'</span>;
+<span class="hljs-keyword">import</span> {ButtonSplitExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./button-split/button-split-example'</span>;
+<span class="hljs-keyword">import</span> {CheckboxDisabledExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./checkbox-disabled/checkbox-disabled-example'</span>;
+<span class="hljs-keyword">import</span> {CheckboxFormsExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./checkbox-forms/checkbox-forms-example'</span>;
+<span class="hljs-keyword">import</span> {CheckboxStandardExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./checkbox-standard/checkbox-standard-example'</span>;
+<span class="hljs-keyword">import</span> {ChipActionExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./chip-action/chip-action-example'</span>;
+<span class="hljs-keyword">import</span> {ChipBasicExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./chip-basic/chip-basic-example'</span>;
+<span class="hljs-keyword">import</span> {ChipRowExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./chip-row/chip-row-example'</span>;
+<span class="hljs-keyword">import</span> {ChipSinglerowExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./chip-singlerow/chip-singlerow-example'</span>;
+<span class="hljs-keyword">import</span> {DrawerBasicExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./drawer-basic/drawer-basic-example'</span>;
+<span class="hljs-keyword">import</span> {DrawerMenu} <span class="hljs-keyword">from</span> <span class="hljs-string">'./drawer-menu/drawer-menu-example'</span>;
+<span class="hljs-keyword">import</span> {DrawerOverlayExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./drawer-overlay/drawer-overlay-example'</span>;
+<span class="hljs-keyword">import</span> {DrawerSideExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./drawer-side/drawer-side-example'</span>;
+<span class="hljs-keyword">import</span> {FormFieldOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./form-field-overview/form-field-overview-example'</span>;
+<span class="hljs-keyword">import</span> {IconOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./icon-overview/icon-overview-example'</span>;
+<span class="hljs-keyword">import</span> {InputPrefixExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./input-prefix/input-prefix-example'</span>;
+<span class="hljs-keyword">import</span> {InputRequiredExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./input-required/input-required-example'</span>;
+<span class="hljs-keyword">import</span> {InputSuffixExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./input-suffix/input-suffix-example'</span>;
+<span class="hljs-keyword">import</span> {ListOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./list-overview/list-overview-example'</span>;
+<span class="hljs-keyword">import</span> {DialogOverviewExampleDialog,ModalOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./modal-overview/modal-overview-example'</span>;
+<span class="hljs-keyword">import</span> {NavbarAppSwitcherExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./navbar-app-switcher/navbar-app-switcher-example'</span>;
+<span class="hljs-keyword">import</span> {NavbarOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./navbar-overview/navbar-overview-example'</span>;
+<span class="hljs-keyword">import</span> {PaginationOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./pagination-overview/pagination-overview-example'</span>;
+<span class="hljs-keyword">import</span> {PicklistSimpleExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./picklist-simple/picklist-simple-example'</span>;
+<span class="hljs-keyword">import</span> {PicklistValuesetExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./picklist-valueset/picklist-valueset-example'</span>;
+<span class="hljs-keyword">import</span> {PopoverDynamicExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./popover-dynamic/popover-dynamic-example'</span>;
+<span class="hljs-keyword">import</span> {PopoverOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./popover-overview/popover-overview-example'</span>;
+<span class="hljs-keyword">import</span> {PopoverPlacementExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./popover-placement/popover-placement-example'</span>;
+<span class="hljs-keyword">import</span> {ProgressDotsExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./progress-dots/progress-dots-example'</span>;
+<span class="hljs-keyword">import</span> {ProgressSpinnerExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./progress-spinner/progress-spinner-example'</span>;
+<span class="hljs-keyword">import</span> {RadioButtonDisabledExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./radio-button-disabled/radio-button-disabled-example'</span>;
+<span class="hljs-keyword">import</span> {RadioButtonFormsExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./radio-button-forms/radio-button-forms-example'</span>;
+<span class="hljs-keyword">import</span> {RadioButtonStandardExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./radio-button-standard/radio-button-standard-example'</span>;
+<span class="hljs-keyword">import</span> {SelectDisabledExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./select-disabled/select-disabled-example'</span>;
+<span class="hljs-keyword">import</span> {SelectFormsExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./select-forms/select-forms-example'</span>;
+<span class="hljs-keyword">import</span> {SelectStandardExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./select-standard/select-standard-example'</span>;
+<span class="hljs-keyword">import</span> {SelectValidationExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./select-validation/select-validation-example'</span>;
+<span class="hljs-keyword">import</span> {SubnavOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./subnav-overview/subnav-overview-example'</span>;
+<span class="hljs-keyword">import</span> {TableFilterExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./table-filter/table-filter-example'</span>;
+<span class="hljs-keyword">import</span> {TableOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./table-overview/table-overview-example'</span>;
+<span class="hljs-keyword">import</span> {TablePageExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./table-page/table-page-example'</span>;
+<span class="hljs-keyword">import</span> {TableSortExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./table-sort/table-sort-example'</span>;
+<span class="hljs-keyword">import</span> {TabsHorizontalExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./tabs-horizontal/tabs-horizontal-example'</span>;
+<span class="hljs-keyword">import</span> {TabsVerticalExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./tabs-vertical/tabs-vertical-example'</span>;
+<span class="hljs-keyword">import</span> {TileOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./tile-overview/tile-overview-example'</span>;
+<span class="hljs-keyword">import</span> {TypeformSurveyOverviewExample} <span class="hljs-keyword">from</span> <span class="hljs-string">'./typeform-survey-overview/typeform-survey-overview-example'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> LiveExample {
+  title: <span class="hljs-built_in">string</span>;
+  component: <span class="hljs-built_in">any</span>;
+  additionalFiles?: <span class="hljs-built_in">string</span>[];
+  selectorName?: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> EXAMPLE_COMPONENTS: {[key: <span class="hljs-built_in">string</span>]: LiveExample} = {
+  <span class="hljs-string">'accordion-overview'</span>: {
+    title: <span class="hljs-string">'Accordion overview'</span>,
+    component: AccordionOverviewExample
+  },
+  <span class="hljs-string">'button-anchor'</span>: {
+    title: <span class="hljs-string">'Anchor Tag Buttons'</span>,
+    component: ButtonAnchorExample
+  },
+  <span class="hljs-string">'button-disabled'</span>: {
+    title: <span class="hljs-string">'Disabled Buttons'</span>,
+    component: ButtonDisabledExample
+  },
+  <span class="hljs-string">'button-icon'</span>: {
+    title: <span class="hljs-string">'Buttons and icons'</span>,
+    component: ButtonIconExample
+  },
+  <span class="hljs-string">'button-link'</span>: {
+    title: <span class="hljs-string">'Buttons styled as links'</span>,
+    component: ButtonLinkExample
+  },
+  <span class="hljs-string">'button-primary'</span>: {
+    title: <span class="hljs-string">'Primary Buttons'</span>,
+    component: ButtonPrimaryExample
+  },
+  <span class="hljs-string">'button-secondary'</span>: {
+    title: <span class="hljs-string">'Secondary Buttons'</span>,
+    component: ButtonSecondaryExample
+  },
+  <span class="hljs-string">'button-split'</span>: {
+    title: <span class="hljs-string">'Split Buttons'</span>,
+    component: ButtonSplitExample
+  },
+  <span class="hljs-string">'checkbox-disabled'</span>: {
+    title: <span class="hljs-string">'Disabled Checkbox'</span>,
+    component: CheckboxDisabledExample
+  },
+  <span class="hljs-string">'checkbox-forms'</span>: {
+    title: <span class="hljs-string">'Forms Support'</span>,
+    component: CheckboxFormsExample
+  },
+  <span class="hljs-string">'checkbox-standard'</span>: {
+    title: <span class="hljs-string">'Standard Checkbox'</span>,
+    component: CheckboxStandardExample
+  },
+  <span class="hljs-string">'chip-action'</span>: {
+    title: <span class="hljs-string">'Action Chips'</span>,
+    component: ChipActionExample
+  },
+  <span class="hljs-string">'chip-basic'</span>: {
+    title: <span class="hljs-string">'Basic Chips'</span>,
+    component: ChipBasicExample
+  },
+  <span class="hljs-string">'chip-row'</span>: {
+    title: <span class="hljs-string">'Chip Rows'</span>,
+    component: ChipRowExample
+  },
+  <span class="hljs-string">'chip-singlerow'</span>: {
+    title: <span class="hljs-string">'Chip Rows (Single Row)'</span>,
+    component: ChipSinglerowExample
+  },
+  <span class="hljs-string">'drawer-basic'</span>: {
+    title: <span class="hljs-string">'Left and Right Drawers'</span>,
+    component: DrawerBasicExample
+  },
+  <span class="hljs-string">'drawer-menu'</span>: {
+    title: <span class="hljs-string">'Filter menu'</span>,
+    component: DrawerMenu
+  },
+  <span class="hljs-string">'drawer-overlay'</span>: {
+    title: <span class="hljs-string">'Overlay or Push Content'</span>,
+    component: DrawerOverlayExample
+  },
+  <span class="hljs-string">'drawer-side'</span>: {
+    title: <span class="hljs-string">'Side-by-Side Drawers'</span>,
+    component: DrawerSideExample
+  },
+  <span class="hljs-string">'form-field-overview'</span>: {
+    title: <span class="hljs-string">'Multiple Form Field Elements'</span>,
+    component: FormFieldOverviewExample
+  },
+  <span class="hljs-string">'icon-overview'</span>: {
+    title: <span class="hljs-string">'Icon overview'</span>,
+    component: IconOverviewExample
+  },
+  <span class="hljs-string">'input-prefix'</span>: {
+    title: <span class="hljs-string">'Disabled Inputs with Prefix and Suffix'</span>,
+    component: InputPrefixExample
+  },
+  <span class="hljs-string">'input-required'</span>: {
+    title: <span class="hljs-string">'Required Input'</span>,
+    component: InputRequiredExample
+  },
+  <span class="hljs-string">'input-suffix'</span>: {
+    title: <span class="hljs-string">'Inline Inputs with Suffix'</span>,
+    component: InputSuffixExample
+  },
+  <span class="hljs-string">'list-overview'</span>: {
+    title: <span class="hljs-string">'List overview'</span>,
+    component: ListOverviewExample
+  },
+  <span class="hljs-string">'modal-overview'</span>: {
+    title: <span class="hljs-string">'Modal overview'</span>,
+    component: ModalOverviewExample,
+    additionalFiles: [<span class="hljs-string">"modal-overview-example-dialog.html"</span>],
+    selectorName: <span class="hljs-string">'ModalOverviewExample, DialogOverviewExampleDialog'</span>
+  },
+  <span class="hljs-string">'navbar-app-switcher'</span>: {
+    title: <span class="hljs-string">'Navbar app switcher with mobile menu example'</span>,
+    component: NavbarAppSwitcherExample
+  },
+  <span class="hljs-string">'navbar-overview'</span>: {
+    title: <span class="hljs-string">'Navbar overview'</span>,
+    component: NavbarOverviewExample
+  },
+  <span class="hljs-string">'pagination-overview'</span>: {
+    title: <span class="hljs-string">'Pagination overview'</span>,
+    component: PaginationOverviewExample
+  },
+  <span class="hljs-string">'picklist-simple'</span>: {
+    title: <span class="hljs-string">'Picklist simple'</span>,
+    component: PicklistSimpleExample
+  },
+  <span class="hljs-string">'picklist-valueset'</span>: {
+    title: <span class="hljs-string">'Picklist valueset'</span>,
+    component: PicklistValuesetExample
+  },
+  <span class="hljs-string">'popover-dynamic'</span>: {
+    title: <span class="hljs-string">'Dynamic Content'</span>,
+    component: PopoverDynamicExample
+  },
+  <span class="hljs-string">'popover-overview'</span>: {
+    title: <span class="hljs-string">'Popover Overview'</span>,
+    component: PopoverOverviewExample
+  },
+  <span class="hljs-string">'popover-placement'</span>: {
+    title: <span class="hljs-string">'Popover Placement'</span>,
+    component: PopoverPlacementExample
+  },
+  <span class="hljs-string">'progress-dots'</span>: {
+    title: <span class="hljs-string">'Progress dots'</span>,
+    component: ProgressDotsExample
+  },
+  <span class="hljs-string">'progress-spinner'</span>: {
+    title: <span class="hljs-string">'Progress spinner'</span>,
+    component: ProgressSpinnerExample
+  },
+  <span class="hljs-string">'radio-button-disabled'</span>: {
+    title: <span class="hljs-string">'Disabled Radio Buttons'</span>,
+    component: RadioButtonDisabledExample
+  },
+  <span class="hljs-string">'radio-button-forms'</span>: {
+    title: <span class="hljs-string">'Inline Radio Buttons using Form Controls'</span>,
+    component: RadioButtonFormsExample
+  },
+  <span class="hljs-string">'radio-button-standard'</span>: {
+    title: <span class="hljs-string">'Standard Radio Buttons'</span>,
+    component: RadioButtonStandardExample
+  },
+  <span class="hljs-string">'select-disabled'</span>: {
+    title: <span class="hljs-string">'Disabled Inline Select Component'</span>,
+    component: SelectDisabledExample
+  },
+  <span class="hljs-string">'select-forms'</span>: {
+    title: <span class="hljs-string">'Select using Angular forms'</span>,
+    component: SelectFormsExample
+  },
+  <span class="hljs-string">'select-standard'</span>: {
+    title: <span class="hljs-string">'Standard Select Component'</span>,
+    component: SelectStandardExample
+  },
+  <span class="hljs-string">'select-validation'</span>: {
+    title: <span class="hljs-string">'Component Validation'</span>,
+    component: SelectValidationExample
+  },
+  <span class="hljs-string">'subnav-overview'</span>: {
+    title: <span class="hljs-string">'Subnav overview'</span>,
+    component: SubnavOverviewExample
+  },
+  <span class="hljs-string">'table-filter'</span>: {
+    title: <span class="hljs-string">'Filtered Table without Borders'</span>,
+    component: TableFilterExample
+  },
+  <span class="hljs-string">'table-overview'</span>: {
+    title: <span class="hljs-string">'Table overview'</span>,
+    component: TableOverviewExample
+  },
+  <span class="hljs-string">'table-page'</span>: {
+    title: <span class="hljs-string">'Table paging'</span>,
+    component: TablePageExample
+  },
+  <span class="hljs-string">'table-sort'</span>: {
+    title: <span class="hljs-string">'Table sorting'</span>,
+    component: TableSortExample
+  },
+  <span class="hljs-string">'tabs-horizontal'</span>: {
+    title: <span class="hljs-string">'Horizontal Tabs with Event Handling'</span>,
+    component: TabsHorizontalExample
+  },
+  <span class="hljs-string">'tabs-vertical'</span>: {
+    title: <span class="hljs-string">'Vertical and Horizontal Tabs'</span>,
+    component: TabsVerticalExample
+  },
+  <span class="hljs-string">'tile-overview'</span>: {
+    title: <span class="hljs-string">'Tile overview'</span>,
+    component: TileOverviewExample
+  },
+  <span class="hljs-string">'typeform-survey-overview'</span>: {
+    title: <span class="hljs-string">'Typeform survey overview'</span>,
+    component: TypeformSurveyOverviewExample
+  },
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> EXAMPLE_LIST = [
+  AccordionOverviewExample,
+  ButtonAnchorExample,
+  ButtonDisabledExample,
+  ButtonIconExample,
+  ButtonLinkExample,
+  ButtonPrimaryExample,
+  ButtonSecondaryExample,
+  ButtonSplitExample,
+  CheckboxDisabledExample,
+  CheckboxFormsExample,
+  CheckboxStandardExample,
+  ChipActionExample,
+  ChipBasicExample,
+  ChipRowExample,
+  ChipSinglerowExample,
+  DrawerBasicExample,
+  DrawerMenu,
+  DrawerOverlayExample,
+  DrawerSideExample,
+  FormFieldOverviewExample,
+  IconOverviewExample,
+  InputPrefixExample,
+  InputRequiredExample,
+  InputSuffixExample,
+  ListOverviewExample,
+  DialogOverviewExampleDialog,ModalOverviewExample,
+  NavbarAppSwitcherExample,
+  NavbarOverviewExample,
+  PaginationOverviewExample,
+  PicklistSimpleExample,
+  PicklistValuesetExample,
+  PopoverDynamicExample,
+  PopoverOverviewExample,
+  PopoverPlacementExample,
+  ProgressDotsExample,
+  ProgressSpinnerExample,
+  RadioButtonDisabledExample,
+  RadioButtonFormsExample,
+  RadioButtonStandardExample,
+  SelectDisabledExample,
+  SelectFormsExample,
+  SelectStandardExample,
+  SelectValidationExample,
+  SubnavOverviewExample,
+  TableFilterExample,
+  TableOverviewExample,
+  TablePageExample,
+  TableSortExample,
+  TabsHorizontalExample,
+  TabsVerticalExample,
+  TileOverviewExample,
+  TypeformSurveyOverviewExample,
+];
+
+<span class="hljs-meta">@NgModule</span>({
+  declarations: EXAMPLE_LIST,
+  entryComponents: EXAMPLE_LIST,
+  imports: [
+    CashmereModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
+  ]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CashmereExampleModule { }

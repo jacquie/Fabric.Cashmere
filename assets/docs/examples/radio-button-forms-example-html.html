@@ -1,0 +1,11 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">hc-form-field</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hc-label</span>&gt;</span>Select your favorite:<span class="hljs-tag">&lt;/<span class="hljs-name">hc-label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hc-radio-group</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"favoriteShow"</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">"true"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hc-radio-button</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let show of shows"</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">"show"</span>&gt;</span>{{show}}<span class="hljs-tag">&lt;/<span class="hljs-name">hc-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">hc-radio-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">hc-form-field</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Current selection: {{favoriteShow ? favoriteShow : 'none'}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hc-button</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Primary-Alt Button"</span> <span class="hljs-attr">buttonStyle</span>=<span class="hljs-string">"primary-alt"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"reset()"</span>&gt;</span>
+    Clear Selection
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
