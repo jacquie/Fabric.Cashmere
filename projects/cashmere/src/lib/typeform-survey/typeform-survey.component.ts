@@ -13,7 +13,7 @@ export class TypeformWindow extends Window {
     template: `<a class="typeform-share link"
                 [href]="surveyUri"
                 data-mode="drawer_right"
-                data-auto-open="true"
+                [attr.data-auto-open]="dataAutoOpen"
                 data-submit-close-delay="0"
                 target="_blank"
                 rel="noopener">
@@ -27,7 +27,9 @@ export class TypeformSurveyComponent {
      */
     @Input()
     public surveyUri: string;
-    private _id: string = 'typef_orm_share';
+    @Input()
+    public dataAutoOpen = true;
+    private _id: string = 'typeform_share';
 
     /**
      * Opens the survey specified in the surveyUri
