@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed, fakeAsync, tick, flushMicrotasks} from '@angular/core/testing';
 import {TypeformSurveyModule} from './typeform-survey.module';
 import {By} from '@angular/platform-browser';
 import {TypeformSurveyComponent} from './typeform-survey.component';
@@ -57,7 +57,7 @@ fdescribe('TypeformSurveyComponent', () => {
             expect(wrap).toThrowError(`SurveyUri must be specified on element hc-typeform-survey`);
         });
     });
-    describe('when getScripts is called and there is a uri', () => {
+    xdescribe('when getScripts is called and there is a uri', () => {
         it('should create a script element', () => {
             let childDebugElement = fixture.debugElement.query(By.directive(TypeformSurveyComponent));
             testComponent.surveyUri = 'https://healthcatalyst.typeform.com/to/bGDyIK?productname=Fabric.Cashmere';
@@ -70,23 +70,47 @@ fdescribe('TypeformSurveyComponent', () => {
             expect(firstScript.getAttribute('id')).toEqual('typeform_share');
         });
     });
-    xdescribe('when the script exists', () => {
-        it('should create a popup', () => {
-            let embedScript = document.createElement('script');
-            embedScript.id = 'typeform_share';
-            embedScript.src = `https://embed.typeform.com/embed.js`;
-
-            // insert embed script before other js scripts
-            const firstScript = document.getElementsByTagName.call(document, 'script')[0];
-            if (firstScript.parentNode) {
-                firstScript.parentNode.insertBefore(embedScript, firstScript);
-            }
-            let childDebugComponent = fixture.debugElement.query(By.directive(TypeformSurveyComponent)).componentInstance;
+    describe('when getScripts is called and there is a uri', () => {
+        it('should create a script element', (done) => {
+            let childDebugElement = fixture.debugElement.query(By.directive(TypeformSurveyComponent));
             testComponent.surveyUri = 'https://healthcatalyst.typeform.com/to/bGDyIK?productname=Fabric.Cashmere';
-            testComponent.dataAutoOpen = true;
-
             fixture.detectChanges();
-            childDebugComponent.open();
+            childDebugElement.componentInstance.open();
+            waitsFor(() => !!document.getElementById(this._id), "Embed never loaded", 10000);
+            runs(() => {
+                const scriptElement = document.getElementById('typeform_share');
+                const firstScript = document.getElementsByTagName.call(document, 'script')[0];
+                expect(scriptElement).toBeTruthy();
+                expect(scriptElement!.getAttribute('src')).toEqual(`https://embed.typeform.com/embed.js`);
+                expect(firstScript.getAttribute('id')).toEqual('typeform_share');
+            });
         });
+    });
+    xdescribe('when the script exists', () => {
+        it('should create a popup', fakeAsync(() => {
+            // let embedScript = document.createElement('script');
+            // embedScript.id = 'typeform_share';
+            // embedScript.src = `https://embed.typeform.com/embed.js`;
+
+            // // insert embed script before other js scripts
+            // const firstScript = document.getElementsByTagName.call(document, 'script')[0];
+            // if (firstScript.parentNode) {
+            //     firstScript.parentNode.insertBefore(embedScript, firstScript);
+            // }
+            // let childDebugComponent = fixture.debugElement.query(By.directive(TypeformSurveyComponent)).componentInstance;
+            // testComponent.surveyUri = 'https://healthcatalyst.typeform.com/to/bGDyIK?productname=Fabric.Cashmere';
+            // testComponent.dataAutoOpen = true;
+
+            // fixture.detectChanges();
+            // embedScript.onload = () => {
+            //     console.log('test embed script loaded');
+            //  };
+            let childDebugElement = fixture.debugElement.query(By.directive(TypeformSurveyComponent));
+            testComponent.surveyUri = 'https://healthcatalyst.typeform.com/to/bGDyIK?productname=Fabric.Cashmere';
+            fixture.detectChanges();
+            childDebugElement.componentInstance.open();
+            tick(1000);
+            //       childDebugElement.componentInstance.open();
+        }));
     });
 });

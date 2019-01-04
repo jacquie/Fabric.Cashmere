@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Subject, Observable, of, Observer} from 'rxjs';
 
 export function throwErrorForMissingSurveyUri() {
     throw Error(`SurveyUri must be specified on element hc-typeform-survey`);
@@ -36,19 +37,32 @@ export class TypeformSurveyComponent {
      */
     public open() {
         if (!document.getElementById(this._id)) {
-            this.getScripts();
+            this.getScripts().subscribe(
+                () => {
+                    console.log('embed loaded', (<TypeformWindow>window).typeformEmbed);
+                    // (<TypeformWindow>window).typeformEmbed.makePopup(this.surveyUri, {
+                    // mode: 'drawer_right',
+                    // autoOpen: true,
+                    // opacity: 100,
+                    // autoClose: 0,
+                    // hideScrollbars: true
+                    // });
+                },
+                e => console.log('error', e)
+            );
         } else {
-            (<TypeformWindow>window).typeformEmbed.makePopup(this.surveyUri, {
-                mode: 'drawer_right',
-                autoOpen: true,
-                opacity: 100,
-                autoClose: 0,
-                hideScrollbars: true
-            });
+            console.log(document.getElementById(this._id));
+            // (<TypeformWindow>window).typeformEmbed.makePopup(this.surveyUri, {
+            //     mode: 'drawer_right',
+            //     autoOpen: true,
+            //     opacity: 100,
+            //     autoClose: 0,
+            //     hideScrollbars: true
+            // });
         }
     }
 
-    private getScripts(): void {
+    private getScripts(): Observable<any> {
         if (!this.surveyUri) {
             throwErrorForMissingSurveyUri();
         }
@@ -58,7 +72,7 @@ export class TypeformSurveyComponent {
         if (!document.getElementById(this._id)) {
             // create new embed script with typeform cdn source
             embedScript = document.createElement('script');
-            embedScript.id = this._id;
+  //          embedScript.id = this._id;
             embedScript.src = `https://embed.typeform.com/embed.js`;
 
             // insert embed script before other js scripts
@@ -66,6 +80,18 @@ export class TypeformSurveyComponent {
             if (firstScript.parentNode) {
                 firstScript.parentNode.insertBefore(embedScript, firstScript);
             }
+            return Observable.create((observer: Observer<any>) => {
+                embedScript.onerror = e => {
+                    observer.error(e);
+                }; // no fromEvent for err handling
+                embedScript.onload = () => {
+                    embedScript.id = this._id;
+                   console.log(document.getElementById(this._id));
+                    observer.next(embedScript);
+                    observer.complete();
+                };
+            });
         }
+        return of(null);
     }
 }
