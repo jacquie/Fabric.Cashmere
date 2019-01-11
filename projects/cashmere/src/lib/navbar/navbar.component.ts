@@ -8,12 +8,20 @@ import {
     Input,
     QueryList,
     ViewChild,
-    ViewEncapsulation
+    ViewEncapsulation,
+    NgZone,
+    OnDestroy
 } from '@angular/core';
-import {NavbarMobileMenuComponent} from './navbar-mobile-menu/navbar-mobile-menu.component';
-import {NavbarLinkComponent} from './navbar-link/navbar-link.component';
+import {fromEvent, Subscription} from 'rxjs';
 import {PopoverContentComponent} from '../popover/popoverContent.component';
+import {NavbarLinkComponent} from './navbar-link/navbar-link.component';
+import {NavbarMobileMenuComponent} from './navbar-mobile-menu/navbar-mobile-menu.component';
+import {take} from 'rxjs/operators';
 
+interface MenuItem {
+    uri: string;
+    name: string;
+}
 /** The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. */
 @Component({
     selector: 'hc-navbar',
@@ -21,7 +29,7 @@ import {PopoverContentComponent} from '../popover/popoverContent.component';
     styleUrls: ['./navbar.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements AfterViewInit, OnDestroy {
     /** Display name of current user */
     @Input()
     user: string = '';
@@ -51,13 +59,18 @@ export class NavbarComponent implements AfterViewInit {
     @ViewChild(PopoverContentComponent)
     _navbarMore: PopoverContentComponent;
 
-    private _menuOpen: boolean = false;
+    @ViewChild('edit')
+    editArea: ElementRef;
+
+    public _menuOpen: boolean = false;
     private _linkWidths: Array<number> = [];
     private _linksMax: number = 0;
     private _logoWidth: number = 0;
     public _collapse: boolean = false;
     public _logoCondense: boolean = false;
-    public _moreList: Array<Object> = [];
+    public _moreList: Array<MenuItem> = [];
+
+    public logoReadySubscription: Subscription;
 
     @HostListener('window:resize')
     _navResize() {
@@ -69,20 +82,21 @@ export class NavbarComponent implements AfterViewInit {
             return;
         }
 
+        if (this._logoWidth === 0 || this._linksMax === 0) {
+            return;
+        }
+
         // Figure out all the relevant element widths
         const navbarWidth: number = this.el.nativeElement.querySelector('.hc-navbar').scrollWidth;
         const icons: number = this.el.nativeElement.querySelector('.hc-navbar-right-container').scrollWidth;
         const more: number = 116;
         const switcher: number = 55;
         let links: number = this._linksMax;
-        if (this._logoWidth === 0) {
-            this._logoWidth = this.el.nativeElement.querySelector('.navbar-app').scrollWidth;
-        }
+
         const logoWidth = this._logoWidth;
         const condensedLogoWidth = logoWidth - 50;
-        const regularWidth = switcher + logoWidth + links + icons;
-        const condensedWidth = switcher + condensedLogoWidth + links + icons;
-
+        const regularWidth = switcher + logoWidth + this._linksMax + icons;
+        const condensedWidth = switcher + condensedLogoWidth + this._linksMax + icons;
         if (navbarWidth <= regularWidth) {
             this._logoCondense = true;
             let tempArray = this._navLinks.toArray();
@@ -117,27 +131,30 @@ export class NavbarComponent implements AfterViewInit {
         this.ref.detectChanges();
     }
 
-    constructor(private el: ElementRef, private ref: ChangeDetectorRef) {}
+    constructor(private zone: NgZone, private el: ElementRef, private ref: ChangeDetectorRef) {}
 
     ngAfterViewInit() {
-        let scope = this;
-        setTimeout(function() {
-            scope._navLinks.forEach(t => {
-                scope._linksMax += t._getWidth();
-                scope._linkWidths.push(t._getWidth());
+        this.logoReadySubscription = fromEvent(this.el.nativeElement.querySelector('.navbar-app img'), 'load').subscribe(event => {
+            this._logoWidth = this.el.nativeElement.querySelector('.navbar-app').clientWidth;
+            this._navResize();
+        });
+        setTimeout(() => {
+            this._navLinks.forEach(t => {
+                this._linksMax += t._getWidth();
+                this._linkWidths.push(t._getWidth());
             });
-            scope._linkWidths.reverse();
-
-            scope._navResize();
+            this._linkWidths.reverse();
+            this._navResize();
         }, 100);
     }
-
     _toggleMobileMenu() {
+        console.log('_toggleMobileMenu');
         if (this._mobileMenu.first) {
             if (this._menuOpen) {
                 this._mobileMenu.first.hide();
                 this._menuOpen = false;
             } else {
+                console.log('_toggleMobileMenu show');
                 this._mobileMenu.first.show();
                 this._menuOpen = true;
             }
@@ -145,10 +162,12 @@ export class NavbarComponent implements AfterViewInit {
     }
 
     _menuClick(event: any) {
+        console.log('_menuClick', event);
         let clickTarget: string = event.target.outerHTML;
 
         // Verify that the click in the mobile menu came from a navigation item
         if (clickTarget.indexOf('hclistline') >= 0 && clickTarget.indexOf('menu-dropdown') === -1) {
+            console.log('_menuClick -> _toggleMobileMenu');
             this._toggleMobileMenu();
         }
     }
@@ -159,5 +178,8 @@ export class NavbarComponent implements AfterViewInit {
 
     _moreClick() {
         this._navbarMore._hide();
+    }
+    ngOnDestroy() {
+        this.logoReadySubscription.unsubscribe();
     }
 }
